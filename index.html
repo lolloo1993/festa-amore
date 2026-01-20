@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Image with Text Overlay</title>
+    <title>Responsive Full-Page Sections</title>
     <style>
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,12 +14,11 @@
         body {
             font-family: Arial, sans-serif;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
-        .hero {
+        /* Full-page sections */
+        .section {
             height: 100vh;
-            background-image: url('your-hero-image.png');
-            background-size: cover;
-            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -26,46 +26,66 @@
             color: white;
             text-align: center;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+        /* Hero Section */
+        .hero {
+            background-image: url('your-hero-image.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .hero-text {
+        /* Logo on Hero */
+        .logo {
+            max-width: 80%;
+            height: auto;
+            z-index: 2;
             position: relative;
-            z-index: 1;
-            padding: 0 20px;
-            max-width: 800px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out forwards;
         }
-        .hero-text h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-        .hero-text p {
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        }
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 2.5rem;
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
-            .hero-text p {
-                font-size: 1.2rem;
+        }
+        /* Second Section */
+        .second-section {
+            background-image: url('Zeichenfläche.png?v=2');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Third Section */
+        .third-section {
+            background-image: url('your-second-image.png?v=2');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 90%;
             }
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Your Title Here</h1>
-            <p>Your subtitle or description here.</p>
-        </div>
+    <!-- Hero Section with Logo -->
+    <section class="section hero">
+        <img src="your-logo.png" alt="Your Logo" class="logo">
+    </section>
+    <!-- Second Section -->
+    <section class="section second-section">
+        <img src="random_gif.gif" alt="Animation" class="gif-image">
+    </section>
+    <!-- Third Section -->
+    <section class="section third-section">
     </section>
 </body>
 </html>
