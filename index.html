@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Full-Page Sections</title>
+    <title>Festa amore</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +20,6 @@
             cursor: url('https://cur.cursors-4u.net/animals/ani-3/ani264.cur'), auto;
         }
 
-        /* Full-page sections */
         .section {
             height: 100vh;
             min-height: -webkit-fill-available;
@@ -33,7 +31,6 @@
             text-align: center;
         }
 
-        /* Hero Section */
         .hero {
             background-image: url('your-hero-image.png');
             background-size: cover;
@@ -41,7 +38,6 @@
             background-attachment: scroll;
         }
 
-        /* Logo on Hero */
         .logo {
             max-width: 80%;
             height: auto;
@@ -59,7 +55,6 @@
             }
         }
 
-        /* Second Section */
         .second-section {
             background-image: url('section2.png');
             background-size: cover;
@@ -67,7 +62,6 @@
             background-attachment: scroll;
         }
 
-        /* Third Section */
         .third-section {
             background-image: url('your-second-image.png');
             background-size: cover;
@@ -92,7 +86,7 @@
         .where-title {
             flex: 1;
             font-family: 'Playfair Display', serif;
-            font-size: 6rem;
+            font-size: 8rem;
             font-weight: 700;
             color: #e8211a;
             line-height: 1.1;
@@ -117,6 +111,14 @@
             margin-bottom: 8px;
         }
 
+        .where-content .location-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #e8211a;
+        }
+
         .weekend-schedule .day-events,
         .where-content .day-events {
             font-size: 1rem;
@@ -124,24 +126,10 @@
             color: #e8211a;
         }
 
-        .weekend-schedule .day-events strong,
-        .where-content .day-events strong {
-            font-weight: 700;
-        }
-
         .weekend-schedule a,
         .where-content a {
             color: #e8211a;
             text-decoration: underline;
-        }
-
-        .weekend-footnote,
-        .where-footnote {
-            font-size: 0.78rem;
-            color: #e8211a;
-            opacity: 0.75;
-            margin-top: 16px;
-            line-height: 1.6;
         }
 
         /* Responsive Design */
@@ -171,11 +159,14 @@
 
             .weekend-title,
             .where-title {
-                font-size: 4rem;
+                font-size: 5rem;
+            }
+
+            .where-content .location-title {
+                font-size: 2.2rem;
             }
         }
 
-        /* Extra small devices */
         @media (max-width: 480px) {
             .logo {
                 max-width: 95%;
@@ -183,7 +174,11 @@
 
             .weekend-title,
             .where-title {
-                font-size: 3rem;
+                font-size: 3.5rem;
+            }
+
+            .where-content .location-title {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -211,7 +206,7 @@
             <div>
                 <div class="day-title">Friday</div>
                 <div class="day-events">
-                    <strong>Ceremony</strong><br>
+                    Ceremony<br>
                     Aperitivo<br>
                     Dinner and dancing
                 </div>
@@ -220,7 +215,7 @@
             <div>
                 <div class="day-title">Saturday</div>
                 <div class="day-events">
-                    <strong>Brunch</strong><br>
+                    Brunch<br>
                     Chilling together and hike<br>
                     Sunset DJ set and bonfire
                 </div>
@@ -235,21 +230,30 @@
         <div class="where-content">
 
             <div>
-                <div class="day-title"><a href="https://maps.app.goo.gl/izCGa473oEjXtnfr8" target="_blank">Torrita Tiberina</a></div>
+                <div class="location-title">Torrita Tiberina</div>
+                <div class="day-events">
+                    <a href="https://maps.app.goo.gl/izCGa473oEjXtnfr8" target="_blank">Find it here on the map</a>
+                </div>
             </div>
 
             <div>
                 <div class="day-title">Logistics</div>
                 <div class="day-events">
-                    You are welcome to come on Thursday already if you prefer.<br>
-                    We can easily arrange to pick you up from the station <em>Poggio Mirteto Scalo</em>, just 1h from Roma Termini.
+                    Festa dell'amore will start on Friday 11th September at 5pm and it will go on until Saturday evening. On Friday we will have the main ceremony, aperitivo, and dinner. On Saturday, we will have a chill morning and then some activities during the day and in the evening.
+                </div>
+            </div>
+
+            <div>
+                <div class="day-title">How to get there</div>
+                <div class="day-events">
+                    If you fly, Rome Fiumicino airport is probably your best choice. There is a direct train to Poggio Mirteto Scalo (1h 40 min, quite regularly). From there we can pick you up by car. Alternatively, from Ciampino airport it is also possible to get a bus and then a train, but just a bit more complex. If you want to rent a car that is also an option but not really necessary.
                 </div>
             </div>
 
             <div>
                 <div class="day-title">Accommodation</div>
                 <div class="day-events">
-                    You are welcome to sleep in the house, but places are limited. People without accommodation in Rome will have precedence in the house. Anybody is welcome to stay in tents :) we will set up a nice festival style camping spot. Just write us if you have questions on accommodation and we will figure it out!
+                    Sleeping spots are unfortunately limited but we will make sure to give a bed to anyone that does not have a place to stay in Rome for Friday and Saturday night (someone will have to stay in a tent ⛺️). Lavinia and I will be there already some days before and will remain some days after, so you can also arrive some time before Friday if more convenient, just let us know your plans!
                 </div>
             </div>
 
