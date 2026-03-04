@@ -252,17 +252,25 @@
     <script>
         const track = document.getElementById('ribbon-track');
         const wrapper = document.getElementById('ribbon-wrapper');
+        const spans = track.querySelectorAll('span');
         let x = 0;
         const speed = 1.2;
-        const amplitude = 18;  // height of the wave in px
-        const frequency = 0.015; // how tight the wave is
+        const amplitude = 22;  // wave height in px
+        const waveLength = 220; // px between wave peaks
 
         function animate() {
             x -= speed;
             const trackWidth = track.scrollWidth / 2;
             if (Math.abs(x) >= trackWidth) x = 0;
-            const y = Math.sin(x * frequency) * amplitude;
-            track.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            track.style.transform = `translateX(${x}px)`;
+
+            spans.forEach((span) => {
+                const rect = span.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const y = Math.sin((centerX / waveLength) * Math.PI * 2) * amplitude;
+                span.style.transform = `translateY(${y}px)`;
+            });
+
             requestAnimationFrame(animate);
         }
         animate();
