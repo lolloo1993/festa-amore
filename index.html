@@ -18,6 +18,7 @@
             font-family: Arial, sans-serif;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            cursor: url('https://cur.cursors-4u.net/animals/ani-3/ani264.cur'), auto;
         }
 
         /* Full-page sections */
@@ -78,33 +79,42 @@
         .map-section {
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
+            justify-content: flex-start;
             background-image: url('section2.png');
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
+            padding: 60px;
+            gap: 60px;
         }
 
         .map-container {
-            width: 50%;
-            height: 100vh;
+            width: 380px;
+            height: 320px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
         .map-container iframe {
             width: 100%;
             height: 100%;
+            border: 0;
         }
 
         .map-text {
-            width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            padding: 60px;
             gap: 20px;
             background-color: rgba(255, 255, 255, 0.75);
+            padding: 40px;
+            border-radius: 12px;
             color: #333;
+            max-width: 400px;
         }
 
         .map-text h2 {
@@ -137,16 +147,18 @@
                 flex-direction: column;
                 height: auto;
                 min-height: 100vh;
+                padding: 40px 20px;
+                justify-content: center;
             }
 
             .map-container {
                 width: 100%;
-                height: 50vh;
+                height: 260px;
             }
 
             .map-text {
-                width: 100%;
-                padding: 40px 20px;
+                max-width: 100%;
+                padding: 30px 20px;
             }
         }
 
@@ -177,10 +189,7 @@
     <section class="section map-section">
         <div class="map-container">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47269.550637832166!2d12.581192147230842!3d42.22840097829748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f0df609b6e199%3A0x4094f9ab239bda0!2s00060%20Torrita%20Tiberina%20RM%2C%20Italia!5e0!3m2!1sit!2ses!4v1772620213082!5m2!1sit!2ses"
-                width="100%"
-                height="100%"
-                style="border:0;"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1388.8922147329654!2d12.617140550778824!3d42.23640532251591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sit!2ses!4v1772620542089!5m2!1sit!2ses"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
