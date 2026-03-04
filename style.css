@@ -9,7 +9,9 @@ body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    cursor: url('https://cdn.cursors-4u.net/previews/cat-paw.cur'), auto;
 }
+
 
 /* Custom Font (if using a local file) */
 @font-face {
@@ -87,3 +89,4 @@ body {
         font-size: 2rem;
     }
 }
+
