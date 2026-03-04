@@ -146,15 +146,17 @@
         /* Scrolling Text Separator */
         .ribbon-track-wrapper {
             overflow: hidden;
-            padding: 20px 0;
+            padding: 40px 0;
             background-color: #f9d8d6;
+            position: relative;
+            height: 80px;
         }
 
         .ribbon-track {
             display: flex;
             white-space: nowrap;
-            animation: scrollLeft 18s linear infinite;
             width: max-content;
+            position: absolute;
         }
 
         .ribbon-track span {
@@ -163,11 +165,6 @@
             font-size: 1.3rem;
             padding: 0 24px;
             letter-spacing: 0.05em;
-        }
-
-        @keyframes scrollLeft {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
         }
             to { transform: translateX(-50%); }
         }
@@ -246,11 +243,30 @@
     </section>
 
     <!-- Scrolling Text Separator -->
-    <div class="ribbon-track-wrapper">
-        <div class="ribbon-track">
+    <div class="ribbon-track-wrapper" id="ribbon-wrapper">
+        <div class="ribbon-track" id="ribbon-track">
             <span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span>
         </div>
     </div>
+
+    <script>
+        const track = document.getElementById('ribbon-track');
+        const wrapper = document.getElementById('ribbon-wrapper');
+        let x = 0;
+        const speed = 1.2;
+        const amplitude = 18;  // height of the wave in px
+        const frequency = 0.015; // how tight the wave is
+
+        function animate() {
+            x -= speed;
+            const trackWidth = track.scrollWidth / 2;
+            if (Math.abs(x) >= trackWidth) x = 0;
+            const y = Math.sin(x * frequency) * amplitude;
+            track.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 
     <!-- Where Section -->
     <section class="where-section">
