@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Full-Page Sections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Reset and Base Styles */
         * {
@@ -16,10 +19,10 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+
         /* Full-page sections */
         .section {
             height: 100vh;
-            /* Fixes mobile browser address bar issues */
             min-height: -webkit-fill-available;
             display: flex;
             align-items: center;
@@ -28,17 +31,15 @@
             color: white;
             text-align: center;
         }
+
         /* Hero Section */
         .hero {
             background-image: url('your-hero-image.png');
             background-size: cover;
             background-position: center;
-            /* Prevents background scrolling issues on iOS */
             background-attachment: scroll;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
+
         /* Logo on Hero */
         .logo {
             max-width: 80%;
@@ -49,13 +50,14 @@
             transform: translateY(30px);
             animation: fadeInUp 1.2s ease-out forwards;
         }
-        
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         /* Second Section */
         .second-section {
             background-image: url('section2.png');
@@ -66,75 +68,130 @@
 
         /* Third Section */
         .third-section {
-            background-image: url('your-second-image.png?v=2');
+            background-image: url('your-second-image.png');
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
         }
 
-<!-- Fourth Section: Map + Text -->
-<section class="section map-section">
-    <div class="map-container">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47269.550637832166!2d12.581192147230842!3d42.22840097829748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f0df609b6e199%3A0x4094f9ab239bda0!2s00060%20Torrita%20Tiberina%20RM%2C%20Italia!5e0!3m2!1sit!2ses!4v1772620213082!5m2!1sit!2ses"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-    <div class="map-text">
-        <h2>Find Us Here</h2>
-        <p>Torrita Tiberina, Rome, Italy</p>
-        <p>Your description or contact info goes here.</p>
-    </div>
-</section>
+        /* Fourth Section: Map + Text */
+        .map-section {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            background-image: url('section2.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+        }
 
-        
+        .map-container {
+            width: 50%;
+            height: 100vh;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-text {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px;
+            gap: 20px;
+            background-color: rgba(255, 255, 255, 0.75);
+            color: #333;
+        }
+
+        .map-text h2 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .map-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .logo {
                 max-width: 90%;
             }
-            
-            /* Optimize background images for mobile */
+
             .section {
                 background-attachment: scroll !important;
             }
-            
-            /* Adjust for smaller screens */
-            .hero, .second-section, .third-section {
+
+            .hero, .second-section, .third-section, .map-section {
                 background-size: cover;
                 background-position: center center;
             }
+
+            .map-section {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .map-container {
+                width: 100%;
+                height: 50vh;
+            }
+
+            .map-text {
+                width: 100%;
+                padding: 40px 20px;
+            }
         }
-        
-        /* Extra small devices (phones in portrait) */
+
+        /* Extra small devices */
         @media (max-width: 480px) {
             .logo {
                 max-width: 95%;
             }
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section with Logo -->
+
+    <!-- Hero Section -->
     <section class="section hero">
         <img src="your-logo.png" alt="Your Logo" class="logo">
     </section>
+
     <!-- Second Section -->
     <section class="section second-section">
     </section>
+
     <!-- Third Section -->
     <section class="section third-section">
     </section>
+
+    <!-- Fourth Section: Map + Text -->
+    <section class="section map-section">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47269.550637832166!2d12.581192147230842!3d42.22840097829748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f0df609b6e199%3A0x4094f9ab239bda0!2s00060%20Torrita%20Tiberina%20RM%2C%20Italia!5e0!3m2!1sit!2ses!4v1772620213082!5m2!1sit!2ses"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="map-text">
+            <h2>Find Us Here</h2>
+            <p>Torrita Tiberina, Rome, Italy</p>
+            <p>Your description or contact info goes here.</p>
+        </div>
+    </section>
+
 </body>
-
 </html>
-
-
