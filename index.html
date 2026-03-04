@@ -146,10 +146,12 @@
         /* Scrolling Text Separator */
         .ribbon-track-wrapper {
             overflow: hidden;
-            padding: 40px 0;
-            background-color: #f9d8d6;
+            padding: 0;
+            background-color: #e8211a;
             position: relative;
-            height: 80px;
+            height: 60px;
+            display: flex;
+            align-items: center;
         }
 
         .ribbon-track {
@@ -161,7 +163,7 @@
 
         .ribbon-track span {
             font-family: 'Playfair Display', serif;
-            color: #e8211a;
+            color: #f9d8d6;
             font-size: 1.3rem;
             padding: 0 24px;
             letter-spacing: 0.05em;
@@ -251,26 +253,14 @@
 
     <script>
         const track = document.getElementById('ribbon-track');
-        const wrapper = document.getElementById('ribbon-wrapper');
-        const spans = track.querySelectorAll('span');
         let x = 0;
         const speed = 1.2;
-        const amplitude = 22;  // wave height in px
-        const waveLength = 220; // px between wave peaks
 
         function animate() {
             x -= speed;
             const trackWidth = track.scrollWidth / 2;
             if (Math.abs(x) >= trackWidth) x = 0;
             track.style.transform = `translateX(${x}px)`;
-
-            spans.forEach((span) => {
-                const rect = span.getBoundingClientRect();
-                const centerX = rect.left + rect.width / 2;
-                const y = Math.sin((centerX / waveLength) * Math.PI * 2) * amplitude;
-                span.style.transform = `translateY(${y}px)`;
-            });
-
             requestAnimationFrame(animate);
         }
         animate();
