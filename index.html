@@ -143,6 +143,35 @@
             text-decoration: underline;
         }
 
+        /* Scrolling Text Separator */
+        .ribbon-track-wrapper {
+            overflow: hidden;
+            padding: 20px 0;
+            background-color: #f9d8d6;
+        }
+
+        .ribbon-track {
+            display: flex;
+            white-space: nowrap;
+            animation: scrollLeft 18s linear infinite;
+            width: max-content;
+        }
+
+        .ribbon-track span {
+            font-family: 'Playfair Display', serif;
+            color: #e8211a;
+            font-size: 1.3rem;
+            padding: 0 24px;
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes scrollLeft {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+            to { transform: translateX(-50%); }
+        }
+
         @media (max-width: 768px) {
             .logo { max-width: 90%; }
 
@@ -215,6 +244,13 @@
 
         </div>
     </section>
+
+    <!-- Scrolling Text Separator -->
+    <div class="ribbon-track-wrapper">
+        <div class="ribbon-track">
+            <span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span><span>Festa Amore &hearts;</span>
+        </div>
+    </div>
 
     <!-- Where Section -->
     <section class="where-section">
