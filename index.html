@@ -69,7 +69,6 @@
             background-attachment: scroll;
         }
 
-        /* Shared style for Weekend and Where sections */
         .weekend-section,
         .where-section {
             background-color: #f9d8d6;
@@ -103,15 +102,15 @@
             text-align: left;
         }
 
-        .weekend-schedule .day-title,
-        .where-content .day-title {
+        .day-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            color: #e8211a;
         }
 
-        .where-content .location-title {
+        .location-title {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             font-weight: 700;
@@ -119,28 +118,36 @@
             color: #e8211a;
         }
 
-        .weekend-schedule .day-events,
-        .where-content .day-events {
+        .day-events {
             font-size: 1rem;
-            line-height: 1.9;
+            line-height: 1.5;
             color: #e8211a;
         }
 
-        .weekend-schedule a,
-        .where-content a {
+        .day-events .event-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .day-events .event-name {
+            font-weight: 700;
+            min-width: 160px;
+        }
+
+        .day-events .event-time {
+            opacity: 0.85;
+        }
+
+        a {
             color: #e8211a;
             text-decoration: underline;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .logo {
-                max-width: 90%;
-            }
+            .logo { max-width: 90%; }
 
-            .section {
-                background-attachment: scroll !important;
-            }
+            .section { background-attachment: scroll !important; }
 
             .hero, .second-section, .third-section {
                 background-size: cover;
@@ -153,33 +160,18 @@
                 height: auto;
                 min-height: 100vh;
                 padding: 60px 30px;
-                justify-content: flex-start;
-                align-items: flex-start;
             }
 
             .weekend-title,
-            .where-title {
-                font-size: 5rem;
-            }
+            .where-title { font-size: 5rem; }
 
-            .where-content .location-title {
-                font-size: 2.2rem;
-            }
+            .location-title { font-size: 2.2rem; }
         }
 
         @media (max-width: 480px) {
-            .logo {
-                max-width: 95%;
-            }
-
-            .weekend-title,
-            .where-title {
-                font-size: 3.5rem;
-            }
-
-            .where-content .location-title {
-                font-size: 1.8rem;
-            }
+            .logo { max-width: 95%; }
+            .weekend-title, .where-title { font-size: 3.5rem; }
+            .location-title { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -191,40 +183,41 @@
     </section>
 
     <!-- Second Section -->
-    <section class="section second-section">
-    </section>
+    <section class="section second-section"></section>
 
     <!-- Third Section -->
-    <section class="section third-section">
-    </section>
+    <section class="section third-section"></section>
 
-    <!-- Fourth Section: The Weekend -->
+    <!-- The Weekend Section -->
     <section class="weekend-section">
         <div class="weekend-title">The<br>weekend</div>
         <div class="weekend-schedule">
 
             <div>
-                <div class="day-title">Friday</div>
+                <div class="day-title">Friday, 11th September</div>
                 <div class="day-events">
-                    Ceremony<br>
-                    Aperitivo<br>
-                    Dinner and dancing
+                    <div class="event-row"><span class="event-name">Small ceremony</span><span class="event-time">5:00 PM</span></div>
+                    <div class="event-row"><span class="event-name">Aperitivo</span><span class="event-time">6:00 PM</span></div>
+                    <div class="event-row"><span class="event-name">Dinner</span><span class="event-time">8:00 PM</span></div>
+                    <div class="event-row"><span class="event-name">Dancing</span><span class="event-time">from 10:00 PM</span></div>
                 </div>
             </div>
 
             <div>
-                <div class="day-title">Saturday</div>
+                <div class="day-title">Saturday, 12th September</div>
                 <div class="day-events">
-                    Brunch<br>
-                    Chilling together and hike<br>
-                    Sunset DJ set and bonfire
+                    <div class="event-row"><span class="event-name">Slow brunch</span><span class="event-time">morning</span></div>
+                    <div class="event-row"><span class="event-name">Hike</span><span class="event-time">during the day</span></div>
+                    <div class="event-row"><span class="event-name">DJ sunset</span><span class="event-time">7:00 PM</span></div>
+                    <div class="event-row"><span class="event-name">Dinner</span><span class="event-time">8:00 PM</span></div>
+                    <div class="event-row"><span class="event-name">Bonfire</span><span class="event-time">10:00 PM</span></div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Fifth Section: Where -->
+    <!-- Where Section -->
     <section class="where-section">
         <div class="where-title">Where</div>
         <div class="where-content">
@@ -253,7 +246,7 @@
             <div>
                 <div class="day-title">Accommodation</div>
                 <div class="day-events">
-                    Sleeping spots are unfortunately limited but we will make sure to give a bed to anyone that does not have a place to stay in Rome for Friday and Saturday night (someone will have to stay in a tent ⛺️). Lavinia and I will be there already some days before and will remain some days after, so you can also arrive some time before Friday if more convenient, just let us know your plans!
+                    Sleeping spots are unfortunately limited but we will make sure to give a bed to anyone that does not have a place to stay in Rome for Friday and Saturday night (someone will have to stay in a tent &#x26FA;&#xFE0F;). Lavinia and I will be there already some days before and will remain some days after, so you can also arrive some time before Friday if more convenient, just let us know your plans!
                 </div>
             </div>
 
