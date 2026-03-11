@@ -6,7 +6,7 @@
     <title>Festa amore</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -168,9 +168,80 @@
             padding: 0 24px;
             letter-spacing: 0.05em;
         }
-            to { transform: translateX(-50%); }
+
+        /* ── RSVP Section ── */
+        .rsvp-section {
+            background-color: #f9d8d6;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px;
+            gap: 40px;
+            min-height: 60vh;
         }
 
+        .rsvp-title {
+            flex: 1;
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            font-weight: 700;
+            color: #e8211a;
+            line-height: 1.1;
+            text-align: left;
+        }
+
+        .rsvp-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 28px;
+        }
+
+        .rsvp-body-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #e8211a;
+        }
+
+        .rsvp-deadline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #e8211a;
+            opacity: 0.8;
+        }
+
+        .rsvp-btn {
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #f9d8d6;
+            background-color: #e8211a;
+            border: 2px solid #e8211a;
+            padding: 16px 40px;
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            position: relative;
+            transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .rsvp-btn:hover {
+            background-color: #f9d8d6;
+            color: #e8211a;
+            transform: translateY(-2px);
+        }
+
+        .rsvp-btn::after {
+            content: ' ❤︎';
+            display: inline;
+            transition: opacity 0.25s;
+        }
+
+        /* ── Responsive ── */
         @media (max-width: 768px) {
             .logo { max-width: 90%; }
 
@@ -193,12 +264,38 @@
             .where-title { font-size: 5rem; }
 
             .location-title { font-size: 2.2rem; }
+
+            /* RSVP mobile */
+            .rsvp-section {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                min-height: unset;
+                padding: 60px 30px;
+                gap: 32px;
+            }
+
+            .rsvp-title {
+                font-size: 5rem;
+            }
+
+            .rsvp-content {
+                width: 100%;
+            }
         }
 
         @media (max-width: 480px) {
             .logo { max-width: 95%; }
             .weekend-title, .where-title { font-size: 3.5rem; }
             .location-title { font-size: 1.8rem; }
+
+            .rsvp-title { font-size: 3.5rem; }
+
+            .rsvp-btn {
+                width: 100%;
+                text-align: center;
+                padding: 16px 24px;
+            }
         }
     </style>
 </head>
@@ -250,21 +347,6 @@
             <span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span></div>
     </div>
 
-    <script>
-        const track = document.getElementById('ribbon-track');
-        let x = 0;
-        const speed = 1.2;
-
-        function animate() {
-            x -= speed;
-            const trackWidth = track.scrollWidth / 2;
-            if (Math.abs(x) >= trackWidth) x = 0;
-            track.style.transform = `translateX(${x}px)`;
-            requestAnimationFrame(animate);
-        }
-        animate();
-    </script>
-
     <!-- Where Section -->
     <section class="where-section">
         <div class="where-title">Where</div>
@@ -294,13 +376,54 @@
             <div>
                 <div class="day-title">Accommodation</div>
                 <div class="day-events">
-                    Sleeping spots are unfortunately limited but we will make sure to give a bed to anyone that does not have a place to stay in Rome for Friday and Saturday night (someone will have to stay in a tent &#x26FA;&#xFE0F;). We will be there already some days before and will remain some days after, so you can  arrive before Friday or stay untill Sunday if more convenient, just write us and we can organize!
+                    Sleeping spots are unfortunately limited but we will make sure to give a bed to anyone that does not have a place to stay in Rome for Friday and Saturday night (someone will have to stay in a tent &#x26FA;&#xFE0F;). We will be there already some days before and will remain some days after, so you can arrive before Friday or stay until Sunday if more convenient, just write us and we can organize!
                 </div>
             </div>
 
         </div>
     </section>
 
+    <!-- Scrolling Text Separator -->
+    <div class="ribbon-track-wrapper">
+        <div class="ribbon-track ribbon-track-2">
+            <span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span>
+        </div>
+    </div>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section">
+        <div class="rsvp-title">RSVP</div>
+        <div class="rsvp-content">
+            <p class="rsvp-body-text">
+                We would love to know if you can make it!<br>
+                Please fill in the form so we can plan the most beautiful weekend together.
+            </p>
+            <p class="rsvp-deadline">Kindly respond by 1st August 2025.</p>
+            <a class="rsvp-btn" href="https://forms.gle/VejJXsRWdrkmzKBa9" target="_blank">
+                I'll be there
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Animate all ribbon tracks
+        const tracks = document.querySelectorAll('.ribbon-track');
+        const speeds = [1.2, 1.0]; // slightly different speeds for variety
+
+        tracks.forEach((track, i) => {
+            let x = 0;
+            const speed = speeds[i] || 1.2;
+
+            function animate() {
+                x -= speed;
+                const trackWidth = track.scrollWidth / 2;
+                if (Math.abs(x) >= trackWidth) x = 0;
+                track.style.transform = `translateX(${x}px)`;
+                requestAnimationFrame(animate);
+            }
+            animate();
+        });
+    </script>
+
 </body>
 </html>
-
