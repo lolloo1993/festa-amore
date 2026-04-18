@@ -175,48 +175,19 @@
             text-decoration: underline;
         }
 
-        /* Scrolling Text Separator */
-        .ribbon-track-wrapper {
+        /* Wave Text Banner */
+        .wave-banner {
+            display: block;
+            width: 100%;
             overflow: hidden;
-            padding: 0;
-            background-color: #e8211a;
-            position: relative;
-            height: 64px;
-            display: flex;
-            align-items: center;
         }
 
-        .ribbon-track {
-            display: flex;
-            white-space: nowrap;
-            width: max-content;
-            position: absolute;
-            align-items: center;
-        }
-
-        @keyframes ribbon-wave {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-14px); }
-        }
-
-        .ribbon-track span {
+        .wave-banner text {
             font-family: 'Playfair Display', serif;
-            color: #f9d8d6;
-            font-size: 1.3rem;
-            padding: 0 24px;
-            letter-spacing: 0.05em;
-            display: inline-block;
-            animation: ribbon-wave 2s ease-in-out infinite;
+            font-size: 32px;
+            fill: #e8211a;
+            font-weight: bold;
         }
-
-        .ribbon-track span:nth-child(8n+1) { animation-delay: 0s; }
-        .ribbon-track span:nth-child(8n+2) { animation-delay: 0.25s; }
-        .ribbon-track span:nth-child(8n+3) { animation-delay: 0.5s; }
-        .ribbon-track span:nth-child(8n+4) { animation-delay: 0.75s; }
-        .ribbon-track span:nth-child(8n+5) { animation-delay: 1s; }
-        .ribbon-track span:nth-child(8n+6) { animation-delay: 1.25s; }
-        .ribbon-track span:nth-child(8n+7) { animation-delay: 1.5s; }
-        .ribbon-track span:nth-child(8n+8) { animation-delay: 1.75s; }
 
         /* ── RSVP Section ── */
         .rsvp-section {
@@ -395,11 +366,11 @@
         </div>
     </section>
 
-    <!-- Scrolling Text Separator -->
-    <div class="ribbon-track-wrapper" id="ribbon-wrapper">
-        <div class="ribbon-track" id="ribbon-track">
-            <span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span></div>
-    </div>
+    <!-- Wave Text Banner 1 -->
+    <svg class="wave-banner" height="90px" viewBox="0 0 1500.72 89.55" style="transform: scale(1.1) rotate(180deg)">
+        <path id="curve-1" d="M1476.133,835.271c-238.287,0-238.287-181.231-476.574-181.231a388.326,388.326,0,0,0-69.728,5.933c-171.338,31.1-194.294,175.3-406.845,175.3C284.7,835.271,284.7,654.041,46.413,654.041H.5V.5L1510.439,12.253V835.271Z" transform="translate(0 -700)" fill="none" />
+        <text><textPath alignment-baseline="top" href="#curve-1" id="text-path-1" text-anchor="start">Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ •</textPath></text>
+    </svg>
 
     <!-- Where Section -->
     <section class="where-section">
@@ -437,12 +408,11 @@
         </div>
     </section>
 
-    <!-- Scrolling Text Separator -->
-    <div class="ribbon-track-wrapper">
-        <div class="ribbon-track ribbon-track-2">
-            <span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span><span>Festa Amore</span><span class="heart">❤︎</span>
-        </div>
-    </div>
+    <!-- Wave Text Banner 2 -->
+    <svg class="wave-banner" height="90px" viewBox="0 0 1500.72 89.55" style="transform: scale(1.1) rotate(180deg)">
+        <path id="curve-2" d="M1476.133,835.271c-238.287,0-238.287-181.231-476.574-181.231a388.326,388.326,0,0,0-69.728,5.933c-171.338,31.1-194.294,175.3-406.845,175.3C284.7,835.271,284.7,654.041,46.413,654.041H.5V.5L1510.439,12.253V835.271Z" transform="translate(0 -700)" fill="none" />
+        <text><textPath alignment-baseline="top" href="#curve-2" id="text-path-2" text-anchor="start">Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ • Festa Amore ❤︎ •</textPath></text>
+    </svg>
 
     <!-- RSVP Section -->
     <section class="rsvp-section">
@@ -460,23 +430,22 @@
     </section>
 
     <script>
-        // Animate all ribbon tracks
-        const tracks = document.querySelectorAll('.ribbon-track');
-        const speeds = [1.2, 1.0]; // slightly different speeds for variety
+        const duration = 100000;
+        const speedMultiplier = 10;
 
-        tracks.forEach((track, i) => {
-            let x = 0;
-            const speed = speeds[i] || 1.2;
-
-            function animate() {
-                x -= speed;
-                const trackWidth = track.scrollWidth / 2;
-                if (Math.abs(x) >= trackWidth) x = 0;
-                track.style.transform = `translateX(${x}px)`;
-                requestAnimationFrame(animate);
+        function animateTextPath(textPath) {
+            let startTime = null;
+            const len = textPath.textContent.trim().length;
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = ((timestamp - startTime) % duration) / duration;
+                textPath.setAttribute("startOffset", -progress * len * speedMultiplier);
+                requestAnimationFrame(step);
             }
-            animate();
-        });
+            requestAnimationFrame(step);
+        }
+
+        document.querySelectorAll("textPath").forEach(animateTextPath);
     </script>
 
 </body>
