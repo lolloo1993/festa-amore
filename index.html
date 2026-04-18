@@ -437,26 +437,24 @@
     </section>
 
     <script>
-        const duration = 100000;
-        const speedMultiplier = 10;
+        const duration = 25000; // ms for one full loop
 
-        function animateTextPath(textPath) {
-            const textLength = textPath.textContent.trim().length;
-            textPath.setAttribute("startOffset", "0");
+        document.querySelectorAll("textPath").forEach(tp => {
+            const pathId = (tp.getAttribute("href") || tp.getAttribute("xlink:href") || "").replace("#", "");
+            const pathEl = document.getElementById(pathId);
+            const pathLength = pathEl ? pathEl.getTotalLength() : 4500;
+
+            tp.setAttribute("startOffset", "0");
             let startTime = null;
 
             function animate(timestamp) {
                 if (!startTime) startTime = timestamp;
-                const elapsed = timestamp - startTime;
-                const progress = (elapsed % duration) / duration;
-                const offset = progress * textLength * speedMultiplier;
-                textPath.setAttribute("startOffset", offset);
+                const elapsed = (timestamp - startTime) % duration;
+                tp.setAttribute("startOffset", (elapsed / duration) * pathLength);
                 requestAnimationFrame(animate);
             }
             requestAnimationFrame(animate);
-        }
-
-        document.querySelectorAll("textPath").forEach(animateTextPath);
+        });
     </script>
 
 </body>
