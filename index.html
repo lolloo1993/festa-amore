@@ -44,9 +44,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            justify-content: center;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
             z-index: 2;
-            position: relative;
         }
 
         .logo {
@@ -60,9 +61,11 @@
         }
 
         .hero-details {
-            max-width: 40%;
+            max-width: 20%;
             height: auto;
             opacity: 0;
+            position: absolute;
+            bottom: 60px;
             animation: fadeInUp 1.2s ease-out 0.4s forwards;
         }
 
@@ -109,7 +112,7 @@
         }
 
         @media (max-width: 768px) {
-            .second-section-text { font-size: 1.7rem; }
+            .second-section-text { font-size: 3.4rem; }
             .second-section-gif { max-width: 200px; width: 80%; }
         }
 
