@@ -453,7 +453,7 @@
             function step(timestamp) {
                 if (!startTime) startTime = timestamp;
                 const progress = ((timestamp - startTime) % duration) / duration;
-                textPath.setAttribute("startOffset", -progress * len * speedMultiplier);
+                textPath.setAttribute("startOffset", progress * len * speedMultiplier);
                 requestAnimationFrame(step);
             }
             requestAnimationFrame(step);
