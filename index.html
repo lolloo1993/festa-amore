@@ -450,7 +450,7 @@
             function animate(timestamp) {
                 if (!startTime) startTime = timestamp;
                 const elapsed = (timestamp - startTime) % duration;
-                tp.setAttribute("startOffset", (elapsed / duration) * pathLength);
+                tp.setAttribute("startOffset", ((elapsed / duration) * pathLength) - pathLength);
                 requestAnimationFrame(animate);
             }
             requestAnimationFrame(animate);
