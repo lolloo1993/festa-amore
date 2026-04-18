@@ -60,6 +60,39 @@
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .second-section-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            z-index: 2;
+            padding: 40px;
+        }
+
+        .second-section-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            max-width: 700px;
+            line-height: 1.5;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .second-section-gif {
+            max-width: 300px;
+            width: 60%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .second-section-text { font-size: 1.4rem; }
+            .second-section-gif { max-width: 200px; width: 80%; }
         }
 
         .third-section {
@@ -307,7 +340,12 @@
     </section>
 
     <!-- Second Section -->
-    <section class="section second-section"></section>
+    <section class="section second-section">
+        <div class="second-section-content">
+            <p class="second-section-text">This party is for us but also for our closest friends. For those who saw us...</p>
+            <img src="random_gif.gif" alt="running horse" class="second-section-gif">
+        </div>
+    </section>
 
     <!-- Third Section -->
     <section class="section third-section"></section>
