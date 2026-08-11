@@ -307,6 +307,62 @@
             opacity: 0.7;
         }
 
+        /* ── Dress Code Section ── */
+        .dresscode-section {
+            background-color: #f9d8d6;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 80px;
+            gap: 40px;
+        }
+
+        .dresscode-title {
+            flex: 1;
+            font-family: 'Scheherazade New', serif;
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: normal;
+            color: #e8211a;
+            line-height: 1.1;
+            text-align: left;
+        }
+
+        .dresscode-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            color: #e8211a;
+            text-align: left;
+        }
+
+        .dresscode-intro {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #e8211a;
+        }
+
+        .dresscode-subtitle {
+            font-family: 'Scheherazade New', serif;
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin-bottom: 10px;
+            color: #e8211a;
+        }
+
+        .dresscode-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #e8211a;
+        }
+
+        .moodboard-link {
+            display: inline-block;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 768px) {
             .logo { max-width: 90%; }
@@ -323,7 +379,8 @@
             .second-section-text { font-size: clamp(1.5rem, 4vw, 4rem); }
 
             .weekend-section,
-            .where-section {
+            .where-section,
+            .dresscode-section {
                 flex-direction: column;
                 height: auto;
                 min-height: 100vh;
@@ -456,6 +513,52 @@ For this reason, invitations are personal and do not include a +1. Thank you for
         </div>
     </section>
 
+    <!-- Dress Code Section -->
+    <section class="dresscode-section">
+        <div class="dresscode-title">Dress<br>code</div>
+        <div class="dresscode-content">
+
+            <div>
+                <div class="dresscode-intro">
+                    We invite you to look fabulous and ready to enjoy the party from the afternoon until late into the night! <br>
+                    Choose something that makes you feel amazing for a special occasion. ✨
+                </div>
+            </div>
+
+            <div>
+                <div class="dresscode-subtitle">Guidelines for her</div>
+                <div class="dresscode-text">
+                    A long or short dress, a beautiful top or shirt with trousers, or a matching two-piece set with a skirt and top. <br><br>
+                    The party will be in the garden! Flat shoes or sandals, or wide, comfortable heels, are highly recommended to avoid sinking into the grass. 🌿 <br><br>
+                    We suggest not to wear: all-white, boho or country-inspired looks.
+                </div>
+            </div>
+
+            <div>
+                <div class="dresscode-subtitle">Guidelines for him</div>
+                <div class="dresscode-text">
+                    A stylish, relaxed shirt (not too formal) paired with relaxed trousers, such as linen or chinos. A jacket is optional. No tie, but if you love it, go for it :) <br><br>
+                    We suggest not to wear: jeans, Hawaiian-style shirts, and anything too formal or stiff.
+                </div>
+            </div>
+
+            <div>
+                <div class="dresscode-subtitle">For the other days</div>
+                <div class="dresscode-text">
+                    For the days before and after Friday's dinner, we recommend bringing normal, comfortable clothes. If it's hot, keep things light and easy for the activities we'll be doing together. <br><br>
+                    And, if you'd like to help us with the preparations, bring a comfortable change of clothes for some "work mode". ❤️
+                </div>
+            </div>
+
+            <div>
+                <div class="dresscode-text moodboard-link">
+                    If you want some visual inspiration <a href="festaamore_dresscode_moodboard.png" target="_blank">click here!</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Wave Text Banner 2 -->
     <div class="wave-banner-wrap">
         <svg class="wave-banner" height="90px" viewBox="0 0 1500.72 89.55" overflow="visible" preserveAspectRatio="xMidYMid slice" style="transform: scale(1.1) rotate(180deg); display: block; margin-top: 55px;">
@@ -510,4 +613,3 @@ For this reason, invitations are personal and do not include a +1. Thank you for
 
 </body>
 </html>
-
