@@ -321,7 +321,7 @@
             background-color: #f9d8d6;
             display: flex;
             flex-direction: row;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
             padding: 30px 80px;
             gap: 40px;
@@ -357,7 +357,7 @@
             background-color: #f9d8d6;
             display: flex;
             flex-direction: row;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
             padding: 30px 80px;
             gap: 40px;
@@ -424,13 +424,21 @@
             .second-section-text { font-size: clamp(1.5rem, 4vw, 4rem); }
 
             .weekend-section,
-            .where-section,
-            .dresscode-section,
-            .present-section {
+            .where-section {
                 flex-direction: column;
                 height: auto;
                 min-height: 100vh;
                 padding: 60px 24px;
+            }
+
+            .dresscode-section,
+            .present-section {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                min-height: unset;
+                padding: 32px 24px;
+                gap: 20px;
             }
 
             .location-title { font-size: clamp(1.5rem, 5vw, 3rem); }
@@ -570,25 +578,21 @@ For this reason, invitations are personal and do not include a +1. Thank you for
                     Choose something that makes you feel amazing for a special occasion. ✨
                 </div>
             </div>
+
             <div>
-                <div class="dresscode-text moodboard-link">
-                    If you want some visual inspiration <a href="festaamore_dresscode_moodboard.png" target="_blank">click here!</a>
-                </div>
-            </div>
-            <div>
-                <div class="dresscode-subtitle">Guidelines for her</div>
+                <div class="dresscode-subtitle">For her</div>
                 <div class="dresscode-text">
                     A long or short dress, a beautiful top or shirt with trousers, or a matching two-piece set with a skirt and top.
                     The party will be in the garden! Flat shoes or sandals, or wide, comfortable heels, are highly recommended to avoid sinking into the grass. 🌿
-                    We suggest not to wear: all-white, boho or country-inspired looks.
+                    <br><br>We suggest not to wear: all-white, boho or country-inspired looks.
                 </div>
             </div>
 
             <div>
-                <div class="dresscode-subtitle">Guidelines for him</div>
+                <div class="dresscode-subtitle">For him</div>
                 <div class="dresscode-text">
                     A stylish, relaxed shirt (not too formal) paired with relaxed trousers, such as linen or chinos. A jacket is optional. No tie, but if you love it, go for it :)
-                    We suggest not to wear: jeans, Hawaiian-style shirts, and anything too formal or stiff.
+                    <br><br>We suggest not to wear: jeans, Hawaiian-style shirts, and anything too formal or stiff.
                 </div>
             </div>
 
@@ -600,14 +604,18 @@ For this reason, invitations are personal and do not include a +1. Thank you for
                 </div>
             </div>
 
-
+            <div>
+                <div class="dresscode-text moodboard-link">
+                    If you want some visual inspiration <a href="festaamore_dresscode_moodboard.png" target="_blank">click here!</a>
+                </div>
+            </div>
 
         </div>
     </section>
 
     <!-- Present Section -->
     <section class="present-section">
-        <div class="present-title">Present</div>
+        <div class="present-title">Gift</div>
         <div class="present-content">
             <div class="present-text">
                 Your presence is the biggest gift — just bring good vibes and dancing shoes.
